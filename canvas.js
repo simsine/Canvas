@@ -1,13 +1,20 @@
-var canvas = document.querySelector('canvas');
-var image = document.querySelector('img')
-
-canvas.height = window.innerHeight;
-canvas.width = window.innerWidth;
-
+// Resizes the canvas element to fit the window, function is called on load and resize //
 function reSize() {
   canvas.height = window.innerHeight;
   canvas.width = window.innerWidth;
 }
+// Gets the elements //
+
+// TODO : Implement wallpaper engine configuration //
+var scalar = 1;
+var speed = 5;
+
+var canvas = document.querySelector('canvas');
+var image = document.querySelector('img');
+console.log(image)
+
+var imageHeight = 90 * scalar; var imageWidth = 150 * scalar;
+image.setAttribute("height", imageHeight); image.setAttribute("width", imageWidth);
 
 var ctx = canvas.getContext("2d");
 
@@ -37,8 +44,8 @@ function randomSign(x){
   }
 }
   // Set velocities with random directions//
-var vx = randomSign(2);
-var vy = randomSign(1);
+var vx = randomSign(speed * 2);
+var vy = randomSign(speed);
 
   //Animate function //
 function animate() {
@@ -46,7 +53,7 @@ function animate() {
   
   ctx.clearRect(0, 0, innerWidth, innerHeight);
   
-  ctx.drawImage(image,x,y)
+  ctx.drawImage(image,x,y, imageWidth, imageHeight)
   
   if (x < 0 || x > window.innerWidth - image.width) {
     vx = -vx;

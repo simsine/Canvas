@@ -3,15 +3,17 @@ function reSize() {
   canvas.height = window.innerHeight;
   canvas.width = window.innerWidth;
 }
+
 // Gets the elements //
 
 // TODO : Implement wallpaper engine configuration //
-var scalar = 1;
-var speed = 5;
+var scalar = 1.5;
+var speed = 2;
 
 var canvas = document.querySelector('canvas');
 var image = document.querySelector('img');
-console.log(image)
+
+reSize();
 
 var imageHeight = 90 * scalar; var imageWidth = 150 * scalar;
 image.setAttribute("height", imageHeight); image.setAttribute("width", imageWidth);

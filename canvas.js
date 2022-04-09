@@ -48,10 +48,10 @@ function animate() {
   
   ctx.drawImage(image,x,y)
   
-  if (x < 0 || x > window.innerWidth - 150) {
+  if (x < 0 || x > window.innerWidth - image.width) {
     vx = -vx;
   }
-  else if (y < 0 || y > window.innerHeight - 90) {
+  else if (y < 0 || y > window.innerHeight - image.height) {
     vy = -vy;
   }
   

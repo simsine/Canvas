@@ -1,7 +1,5 @@
-
 var canvas = document.querySelector('canvas');
 var image = document.querySelector('img')
-console.log(canvas);
 
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
@@ -25,12 +23,23 @@ for (i = 0; i < 150; i++) {
 */
 
 // DvD logo //
+  // Set start point to middle of canvas //
 var x = canvas.width/2;
 var y = canvas.height/2;
+  // Function for giving either a negative or positive sign //
+function randomSign(x){
+  if (Math.random() < 0.5){
+    return -x
+  }
+  else{
+    return x
+  }
+}
+  // Set velocities with random directions//
+var vx = randomSign(2);
+var vy = randomSign(1);
 
-var vx = 2;
-var vy = 1;
-
+  //Animate function //
 function animate() {
   requestAnimationFrame(animate);
   
@@ -50,5 +59,5 @@ function animate() {
   x = x + vx;
   y = y + vy; 
 }
-
+// Calling the animate function //
 animate();

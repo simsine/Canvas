@@ -12,6 +12,7 @@ function reSize() {
 var ctx = canvas.getContext("2d");
 
 // Generates cubes with a random size and color //
+// This is just a random test i did //
 /*
 for (i = 0; i < 150; i++) {
   s = Math.floor(Math.random()*25) + 50
